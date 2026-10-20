@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 21 — Bố cục trang 4 vùng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Khung bố cục 4 vùng: Banner, Menu dọc, Nội dung chính, Cột quảng cáo -->
+    <div class="layout-container">
+        <!-- VÙNG 1: BANNER TRÊN CÙNG (nền #C62828 + ảnh nền, chữ trắng) -->
+        <header class="top-banner">
+            <img src="../Anh/Bai21/LogoTT.gif" alt="Logo Trung Tâm" class="banner-logo">
+            <!-- <h1 class="banner-title">Hệ thống bài tập Lập trình Web</h1> -->
+        </header>
+
+        <!-- KHUNG THÂN CHỨA 3 CỘT (Menu dọc, Nội dung, Quảng cáo) -->
+        <div class="main-body">
+            <!-- VÙNG 2: MENU DỌC BÊN TRÁI (cột 200px, nền #C62828 -> #8E0000) -->
+            <nav class="sidebar-menu">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-item">Ngôn ngữ HTML</a></li>
+                    <li><a href="#" class="nav-item">Ngôn ngữ JavaScript</a></li>
+                    <li><a href="#" class="nav-item">Các đối tượng trong JavaScript</a></li>
+                    <li><a href="#" class="nav-item">CSS và bố cục hiện đại</a></li>
+                </ul>
+            </nav>
+
+            <!-- VÙNG 3: NỘI DUNG CHÍNH Ở GIỮA (hộp vàng + phần nội dung) -->
+            <main class="content-area">
+                <h2 class="content-title">Bài tập HTML cơ bản</h2>
+
+                <!-- Hộp menu con: nền #FFE082, bo góc -->
+                <div class="sub-menu-box">
+                    <span>• Đảo chuỗi</span>
+                    <span>• Phân tích chuỗi</span>
+                    <span>• Tìm và thay thế</span>
+                </div>
+
+                <!-- Khung nội dung bài tập: viền #e0e0e0, nền #FFFFFF -->
+                <div class="task-box">
+                    <p class="task-prompt">Thiết kế trang web có nội dung như sau:</p>
+                    <div class="task-demo">
+                        <p class="school-name">Trung Tâm Tin học – ĐH KHTN</p>
+                        <p class="welcome-text">Chào mừng các bạn đến với ngôn ngữ HTML</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- VÙNG 4: CỘT QUẢNG CÁO BÊN PHẢI (cột 160px, 2 ảnh xếp dọc) -->
+            <aside class="ads-sidebar">
+                <div class="ad-item">
+                    <img src="../Anh/Bai21/Qcao01.gif" alt="Quảng cáo 1" class="ad-image">
+                </div>
+                <div class="ad-item">
+                    <img src="../Anh/Bai21/Qcao02.gif" alt="Quảng cáo 2" class="ad-image">
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

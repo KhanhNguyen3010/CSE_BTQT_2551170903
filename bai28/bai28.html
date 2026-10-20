@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 28 — Carousel & Tabs (Bootstrap)</title>
+    <!-- Bootstrap 5 CSS qua CDN theo yêu cầu -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light py-5">
+    <main class="container">
+        <!-- Khung bao bọc nội dung -->
+        <div class="carousel-tab-wrapper bg-white rounded-3 shadow-sm p-4 p-md-5 mx-auto">
+            <!-- Tiêu đề màu xanh căn giữa -->
+            <h2 class="section-title text-primary text-center fw-bold mb-4">Khám phá điểm đến</h2>
+
+            <!-- 1. CAROUSEL 3 ẢNH (TỰ CHẠY, CÓ CAPTION, INDICATORS, NÚT PREV/NEXT) -->
+            <div id="destinationCarousel" class="carousel slide rounded-3 overflow-hidden shadow-sm" data-bs-ride="carousel" data-bs-interval="3500">
+                <!-- Indicators (3 gạch chuyển slide) -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#destinationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#destinationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#destinationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- Danh sách các slide ảnh -->
+                <div class="carousel-inner">
+                    <!-- Slide 1: Vịnh Hạ Long -->
+                    <div class="carousel-item active">
+                        <img src="../Anh/Bai28/1-vinh-ha-long.jpg" class="d-block w-100 carousel-img" alt="Vịnh Hạ Long">
+                        <div class="carousel-caption d-block">
+                            <div class="caption-box">
+                                <h5 class="fw-bold mb-1">Vịnh Hạ Long</h5>
+                                <p class="mb-0 small">Di sản thiên nhiên thế giới</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Thác Bản Giốc -->
+                    <div class="carousel-item">
+                        <img src="../Anh/Bai28/3-thac-ban-gioc.jpg" class="d-block w-100 carousel-img" alt="Thác Bản Giốc">
+                        <div class="carousel-caption d-block">
+                            <div class="caption-box">
+                                <h5 class="fw-bold mb-1">Thác Bản Giốc</h5>
+                                <p class="mb-0 small">Thác nước đẹp nhất Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Hang Sơn Đoòng -->
+                    <div class="carousel-item">
+                        <img src="../Anh/Bai28/2-son-doong.jpg" class="d-block w-100 carousel-img" alt="Hang Sơn Đoòng">
+                        <div class="carousel-caption d-block">
+                            <div class="caption-box">
+                                <h5 class="fw-bold mb-1">Hang Sơn Đoòng</h5>
+                                <p class="mb-0 small">Hang động tự nhiên lớn nhất thế giới</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút Prev / Next -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#destinationCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#destinationCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- 2. NAV PILLS 3 TAB (Giới thiệu / Lịch trình / Chi phí) -->
+            <ul class="nav nav-pills justify-content-center my-4" id="destinationTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active fw-medium px-4" id="intro-tab" data-bs-toggle="pill" data-bs-target="#tab-intro" type="button" role="tab" aria-controls="tab-intro" aria-selected="true">Giới thiệu</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-medium px-4" id="schedule-tab" data-bs-toggle="pill" data-bs-target="#tab-schedule" type="button" role="tab" aria-controls="tab-schedule" aria-selected="false">Lịch trình</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-medium px-4" id="cost-tab" data-bs-toggle="pill" data-bs-target="#tab-cost" type="button" role="tab" aria-controls="tab-cost" aria-selected="false">Chi phí</button>
+                </li>
+            </ul>
+
+            <!-- 3. NỘI DUNG CÁC TAB (tab-content) -->
+            <div class="tab-content" id="destinationTabsContent">
+                <!-- Tab Giới thiệu -->
+                <div class="tab-pane fade show active p-4 border rounded-3 bg-white" id="tab-intro" role="tabpanel" aria-labelledby="intro-tab">
+                    <p class="mb-0 text-secondary">Tour 3 ngày 2 đêm khám phá các danh thắng miền Bắc, khởi hành hằng tuần.</p>
+                </div>
+
+                <!-- Tab Lịch trình -->
+                <div class="tab-pane fade p-4 border rounded-3 bg-white" id="tab-schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                    <p class="mb-0 text-secondary"><strong>Ngày 1:</strong> Hà Nội - Vịnh Hạ Long, nghỉ đêm trên vịnh.<br><strong>Ngày 2:</strong> Hạ Long - Cao Bằng, tham quan đèo Mã Phục.<br><strong>Ngày 3:</strong> Khám phá Thác Bản Giốc và trở về Hà Nội.</p>
+                </div>
+
+                <!-- Tab Chi phí -->
+                <div class="tab-pane fade p-4 border rounded-3 bg-white" id="tab-cost" role="tabpanel" aria-labelledby="cost-tab">
+                    <p class="mb-0 text-secondary">Trọn gói: <strong>3.500.000 VNĐ / khách</strong> (Bao gồm xe đưa đón du lịch đời mới, phòng nghỉ khách sạn, các bữa ăn theo lịch trình và vé tham quan toàn tuyến).</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS Bundle qua CDN theo yêu cầu -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

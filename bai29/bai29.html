@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 29 — Bảng dữ liệu & Phân trang (Bootstrap)</title>
+    <!-- Bootstrap 5 CSS qua CDN theo yêu cầu -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light py-5">
+    <main class="container">
+        <!-- Khung bao bảng danh sách sinh viên -->
+        <div class="card shadow-sm border-0 rounded-3 p-4 p-md-5 mx-auto student-card">
+            <!-- Header của thẻ: Tiêu đề bên trái, badge tổng số bên phải -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold mb-0 text-dark">Danh sách sinh viên</h4>
+                <span class="badge bg-primary px-3 py-2 rounded-2 fw-semibold">Tổng: 42</span>
+            </div>
+
+            <!-- Bao bảng cuộn ngang trên màn hình nhỏ (table-responsive) -->
+            <div class="table-responsive">
+                <!-- Bảng sọc xen kẽ và hiệu ứng hover -->
+                <table class="table table-striped table-hover align-middle mb-0 custom-table">
+                    <!-- Header bảng nền #212529, chữ #FFFFFF -->
+                    <thead class="custom-thead text-white">
+                        <tr>
+                            <th scope="col" class="text-center" style="width: 50px;">#</th>
+                            <th scope="col" style="width: 140px;">Mã SV</th>
+                            <th scope="col">Họ và tên</th>
+                            <th scope="col" style="width: 130px;">Lớp</th>
+                            <th scope="col" class="text-center" style="width: 90px;">Điểm</th>
+                            <th scope="col" class="text-center" style="width: 120px;">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dòng 1 -->
+                        <tr>
+                            <th scope="row" class="text-center text-secondary">1</th>
+                            <td>2251060001</td>
+                            <td class="fw-medium text-dark">Nguyễn Văn An</td>
+                            <td>67CNTT1</td>
+                            <td class="text-center fw-semibold">8.5</td>
+                            <td class="text-center">
+                                <span class="badge bg-success rounded-pill px-3 py-1">Đạt</span>
+                            </td>
+                        </tr>
+
+                        <!-- Dòng 2 -->
+                        <tr>
+                            <th scope="row" class="text-center text-secondary">2</th>
+                            <td>2251060002</td>
+                            <td class="fw-medium text-dark">Trần Thị Bình</td>
+                            <td>67CNTT1</td>
+                            <td class="text-center fw-semibold">7.0</td>
+                            <td class="text-center">
+                                <span class="badge bg-success rounded-pill px-3 py-1">Đạt</span>
+                            </td>
+                        </tr>
+
+                        <!-- Dòng 3 -->
+                        <tr>
+                            <th scope="row" class="text-center text-secondary">3</th>
+                            <td>2251060003</td>
+                            <td class="fw-medium text-dark">Lê Minh Cường</td>
+                            <td>67CNTT2</td>
+                            <td class="text-center fw-semibold">5.5</td>
+                            <td class="text-center">
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold">Thi lại</span>
+                            </td>
+                        </tr>
+
+                        <!-- Dòng 4 -->
+                        <tr>
+                            <th scope="row" class="text-center text-secondary">4</th>
+                            <td>2251060004</td>
+                            <td class="fw-medium text-dark">Phạm Thu Dung</td>
+                            <td>67KTPM1</td>
+                            <td class="text-center fw-semibold">9.0</td>
+                            <td class="text-center">
+                                <span class="badge bg-success rounded-pill px-3 py-1">Đạt</span>
+                            </td>
+                        </tr>
+
+                        <!-- Dòng 5 -->
+                        <tr>
+                            <th scope="row" class="text-center text-secondary">5</th>
+                            <td>2251060005</td>
+                            <td class="fw-medium text-dark">Hoàng Gia Hân</td>
+                            <td>67KTPM1</td>
+                            <td class="text-center fw-semibold">6.5</td>
+                            <td class="text-center">
+                                <span class="badge bg-success rounded-pill px-3 py-1">Đạt</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Thanh phân trang căn giữa, làm nổi bật trang hiện tại -->
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center mb-0">
+                    <li class="page-item">
+                        <a class="page-link text-secondary" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link text-primary" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link text-primary" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link text-secondary" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS Bundle qua CDN theo yêu cầu -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

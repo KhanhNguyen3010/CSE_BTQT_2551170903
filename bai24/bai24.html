@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 24 — Bảng giá 3 gói (Pricing)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="pricing-container">
+        <!-- Tiêu đề và mô tả đầu trang -->
+        <header class="pricing-header">
+            <h1 class="pricing-title">Bảng giá khoá học</h1>
+            <p class="pricing-subtitle">Chọn gói phù hợp — hiệu ứng chuyển động và làm nổi bật gói phổ biến.</p>
+        </header>
+
+        <!-- Lưới 3 gói giá (Grid 3 cột) -->
+        <div class="pricing-grid">
+            <!-- Gói 1: Starter -->
+            <article class="pricing-card">
+                <div class="card-badge">CƠ BẢN</div>
+                <h2 class="plan-name">Starter</h2>
+                <div class="plan-price">
+                    <span class="price-num">0</span>
+                    <span class="price-unit">đ</span>
+                </div>
+                <ul class="feature-list">
+                    <li>12 bài HTML/CSS</li>
+                    <li>Video hướng dẫn</li>
+                    <li>Hỗ trợ qua email</li>
+                </ul>
+                <button type="button" class="btn-action btn-secondary">Bắt đầu</button>
+            </article>
+
+            <!-- Gói 2: Pro (Gói nổi bật .hot) -->
+            <article class="pricing-card hot">
+                <div class="card-badge">PHỔ BIẾN NHẤT</div>
+                <h2 class="plan-name">Pro</h2>
+                <div class="plan-price">
+                    <span class="price-num">499</span>
+                    <span class="price-unit">k/tháng</span>
+                </div>
+                <ul class="feature-list">
+                    <li>30 bài HTML/CSS/JS</li>
+                    <li>Bootstrap 5</li>
+                    <li>Chấm bài + phản hồi</li>
+                    <li>Hỗ trợ 1-1</li>
+                </ul>
+                <button type="button" class="btn-action btn-primary">Đăng ký ngay</button>
+            </article>
+
+            <!-- Gói 3: Team -->
+            <article class="pricing-card">
+                <div class="card-badge">NÂNG CAO</div>
+                <h2 class="plan-name">Team</h2>
+                <div class="plan-price">
+                    <span class="price-num">1.2</span>
+                    <span class="price-unit">tr/tháng</span>
+                </div>
+                <ul class="feature-list">
+                    <li>Mọi quyền lợi gói Pro</li>
+                    <li>Dự án nhóm</li>
+                    <li>Mentor riêng</li>
+                </ul>
+                <button type="button" class="btn-action btn-secondary">Liên hệ</button>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>

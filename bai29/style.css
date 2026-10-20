@@ -1,0 +1,59 @@
+/* Style bổ trợ cho Bài 29 — Bảng dữ liệu & Phân trang */
+body {
+    background-color: #f5f6f8;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.student-card {
+    max-width: 860px;
+}
+
+/* Header bảng nền #212529, chữ #FFFFFF */
+.custom-thead th {
+    background-color: #212529 !important;
+    color: #ffffff !important;
+    border-bottom: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: 600;
+}
+
+/* Dòng xen kẽ #F8F9FA */
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-bg-type: #f8f9fa;
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-hover-bg: #f1f3f5;
+}
+
+.custom-table td,
+.custom-table th {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
+
+/* Màu trạng thái: Đạt #198754, Thi lại #ffc107 */
+.badge.bg-success {
+    background-color: #198754 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+/* Phân trang căn giữa, trang hiện tại #0d6efd */
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #ffffff;
+}
+
+.pagination .page-link {
+    padding: 6px 14px;
+    font-size: 0.95rem;
+}
+
+.pagination .page-link:focus {
+    box-shadow: none;
+}

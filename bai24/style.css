@@ -1,0 +1,212 @@
+/* ========================================================
+   BÀI 24 — BẢNG GIÁ 3 GÓI (PRICING)
+   Bố cục 3 cột, gói giữa .hot nâng lên, viền màu #4f46e5, bóng đậm
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+    color: #1e293b;
+}
+
+/* Khung chứa bảng giá */
+.pricing-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.pricing-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.pricing-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.pricing-subtitle {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Lưới 3 gói: Grid 3 cột */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: center;
+}
+
+/* Thẻ gói cơ bản: nền #FFFFFF, viền #e2e8f0, bo góc 14px, bóng nhẹ */
+.pricing-card {
+    background-color: #FFFFFF;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 32px 24px 28px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Gói nổi bật .hot: viền #4f46e5, nâng lên, bóng đậm */
+.pricing-card.hot {
+    border: 2px solid #4f46e5;
+    padding: 38px 24px 34px 24px;
+    box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.25);
+    transform: translateY(-8px);
+    z-index: 2;
+}
+
+.pricing-card.hot:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 35px -10px rgba(79, 70, 229, 0.35);
+}
+
+/* Nhãn gói: nền #eef2ff, chữ #4338ca, bo tròn */
+.card-badge {
+    background-color: #eef2ff;
+    color: #4338ca;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+/* Tên gói */
+.plan-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* Giá: chữ #1e293b, cỡ lớn, in đậm */
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    color: #1e293b;
+    margin-bottom: 24px;
+}
+
+.price-num {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.price-unit {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Danh sách quyền lợi */
+.feature-list {
+    list-style: none;
+    margin-bottom: 28px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-list li {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.4;
+}
+
+/* Nút đăng ký / hành động */
+.btn-action {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+/* Nút gói thường */
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+/* Nút gói nổi bật: nền #4f46e5, chữ #FFFFFF */
+.btn-primary {
+    background-color: #4f46e5;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+}
+
+.btn-action:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   THIẾT KẾ RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .pricing-container {
+        padding: 28px 16px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pricing-card.hot {
+        transform: none;
+    }
+
+    .pricing-card.hot:hover {
+        transform: translateY(-4px);
+    }
+}

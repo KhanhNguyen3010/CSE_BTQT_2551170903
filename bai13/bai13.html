@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 13 — Đồng hồ số</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 1. KHUNG ĐỒNG HỒ SỐ (NỀN ĐEN, CHỮ SỐ CAO 52PX) -->
+        <div class="clock-box">
+            <!-- Giờ (hh) -->
+            <img id="hour1" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+            <img id="hour2" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+
+            <!-- Dấu hai chấm -->
+            <img src="../Anh/Bai13/haicham.gif" alt=":" class="clock-colon">
+
+            <!-- Phút (mm) -->
+            <img id="min1" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+            <img id="min2" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+
+            <!-- Dấu hai chấm -->
+            <img src="../Anh/Bai13/haicham.gif" alt=":" class="clock-colon">
+
+            <!-- Giây (ss) -->
+            <img id="sec1" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+            <img id="sec2" src="../Anh/Bai13/00.gif" alt="0" class="clock-digit">
+        </div>
+
+        <!-- 2. KHUNG LỜI CHÀO THEO BUỔI (NỀN TRẮNG, CHỮ ĐỎ #c62828) -->
+        <div class="greeting-box">
+            <h1 id="greeting" class="greeting-text">Chào buổi sáng</h1>
+        </div>
+    </div>
+
+    <!-- Script xử lý đồng hồ và lời chào -->
+    <script src="script.js"></script>
+</body>
+
+</html>

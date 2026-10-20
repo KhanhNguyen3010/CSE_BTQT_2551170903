@@ -1,0 +1,18 @@
+/* ========================================================
+   BÀI 27 — TRANG SẢN PHẨM VỚI CARD, MODAL & ACCORDION
+   ======================================================== */
+
+.spot-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #cfe2ff;
+    color: #084298;
+}

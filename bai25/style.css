@@ -1,0 +1,12 @@
+/* ========================================================
+   BÀI 25 — TRANG DU LỊCH VỚI NAVBAR & GRID (BOOTSTRAP 5)
+   ======================================================== */
+
+.card-tour-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #212529;
+}

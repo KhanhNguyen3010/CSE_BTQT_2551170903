@@ -1,0 +1,101 @@
+/* Style bổ trợ cho Bài 30 — Bảng điều khiển */
+body {
+    background-color: #f5f6f8;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Sidebar: rộng 230px, nền #212529, chữ #FFFFFF */
+.sidebar {
+    width: 230px;
+    background-color: #212529;
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    padding: 10px 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar .nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mục menu đang chọn #0d6efd */
+.sidebar .nav-link.active {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+/* Badge thông báo màu vàng trên header */
+.badge-notice {
+    background-color: #ffc107 !important;
+}
+
+/* Thẻ thống kê */
+.stat-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Thanh tiến độ */
+.stat-progress {
+    height: 5px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-success {
+    background-color: #198754 !important;
+}
+
+.progress-bar-danger {
+    background-color: #dc3545 !important;
+}
+
+.progress-bar-warning {
+    background-color: #ffc107 !important;
+}
+
+/* Badge màu tỉ lệ hoàn thành theo chương */
+.badge-rate {
+    font-size: 0.82rem;
+    min-width: 52px;
+    text-align: center;
+}
+
+.badge-green {
+    background-color: #198754 !important;
+    color: #ffffff;
+}
+
+.badge-blue {
+    background-color: #0dcaf0 !important;
+    color: #ffffff;
+}
+
+.badge-cyan {
+    background-color: #0dcaf0 !important;
+    color: #ffffff;
+}
+
+.badge-gray {
+    background-color: #6c757d !important;
+    color: #ffffff;
+}
+
+.chapter-list .list-group-item {
+    border-color: #f1f3f5;
+}

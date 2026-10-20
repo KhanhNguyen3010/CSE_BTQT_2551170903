@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 22 — Chế độ Sáng / Tối (CSS Variables + JS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="toi">
+    <main class="theme-card">
+        <!-- Thanh tiêu đề kèm nút gạt chuyển Sáng/Tối -->
+        <header class="card-header">
+            <h1 class="header-title">Chế độ Tối / Sáng</h1>
+            <label class="switch" for="theme-toggle" aria-label="Chuyển chế độ giao diện">
+                <input type="checkbox" id="theme-toggle" checked>
+                <span class="slider"></span>
+            </label>
+        </header>
+
+        <!-- Danh sách thẻ thông tin -->
+        <section class="info-cards">
+            <!-- Thẻ 1 -->
+            <article class="info-card">
+                <h2 class="info-title">Biến CSS (CSS Variables)</h2>
+                <p class="info-desc">Toàn bộ màu sắc được khai báo trong :root và ghi đè bằng class .toi.</p>
+            </article>
+
+            <!-- Thẻ 2 -->
+            <article class="info-card">
+                <h2 class="info-title">Chuyển đổi bằng JavaScript</h2>
+                <p class="info-desc">Nút gạt thêm/bỏ class .toi trên &lt;body&gt; — mọi thành phần tự đổi màu.</p>
+            </article>
+
+            <!-- Thẻ 3 -->
+            <article class="info-card">
+                <h2 class="info-title">Chuyển màu mượt</h2>
+                <p class="info-desc">Dùng transition để màu nền và chữ chuyển dần, không bị giật.</p>
+            </article>
+        </section>
+
+        <!-- Dòng chú thích trạng thái hiện tại -->
+        <footer class="status-footer">
+            <span id="status-text">Đây là giao diện ở chế độ TỐI (đang bật).</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

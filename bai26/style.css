@@ -1,0 +1,17 @@
+/* ========================================================
+   BÀI 26 — FORM ĐĂNG KÝ VỚI BOOTSTRAP 5
+   ======================================================== */
+
+.card {
+    border-radius: 12px;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}

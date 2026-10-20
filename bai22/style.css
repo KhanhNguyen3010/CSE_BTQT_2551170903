@@ -1,0 +1,168 @@
+/* ========================================================
+   BÀI 22 — CHẾ ĐỘ SÁNG / TỐI (CSS VARIABLES + JS)
+   Toàn bộ màu sắc dùng biến CSS, chuyển màu mượt bằng transition
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 1. KHAI BÁO BIẾN MÀU TRONG :root (CHẾ ĐỘ SÁNG) */
+:root {
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-the: #f1f5f9;
+    --border-vien: #e2e8f0;
+    --color-chu: #1e293b;
+    --color-phu: #64748b;
+    --color-nhan: #2563eb;
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* 2. GHI ĐÈ BIẾN MÀU BẰNG CLASS .toi (CHẾ ĐỘ TỐI) */
+body.toi {
+    --bg-body: #0a0f1d;
+    --bg-card: #0f172a;
+    --bg-the: #1e293b;
+    --border-vien: #334155;
+    --color-chu: #e2e8f0;
+    --color-phu: #94a3b8;
+    --color-nhan: #60a5fa;
+    --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--color-chu);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    line-height: 1.6;
+}
+
+/* Khung card trung tâm */
+.theme-card {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 580px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    padding: 28px 26px;
+    border: 1px solid var(--border-vien);
+}
+
+/* Header: Tiêu đề + Nút gạt */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-chu);
+}
+
+/* Nút gạt chuyển chế độ (Switch Toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    border-radius: 34px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch input:checked + .slider {
+    background-color: #2563eb;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Danh sách thẻ thông tin */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-color: var(--bg-the);
+    border: 1px solid var(--border-vien);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.info-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-nhan);
+    margin-bottom: 6px;
+}
+
+.info-desc {
+    font-size: 13.5px;
+    color: var(--color-chu);
+    line-height: 1.5;
+}
+
+/* Dòng trạng thái footer */
+.status-footer {
+    font-size: 13px;
+    color: var(--color-phu);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .theme-card {
+        padding: 20px 16px;
+    }
+
+    .header-title {
+        font-size: 18px;
+    }
+
+    .info-card {
+        padding: 14px 16px;
+    }
+}

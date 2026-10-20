@@ -1,0 +1,50 @@
+/* Style bổ trợ cho Bài 28 — Carousel & Tabs */
+body {
+    background-color: #f5f6f8;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.carousel-tab-wrapper {
+    max-width: 860px;
+}
+
+/* Ảnh carousel có chiều cao cố định 340px, object-fit cover */
+.carousel-img {
+    height: 340px;
+    object-fit: cover;
+}
+
+/* Chú thích slide: chữ #FFFFFF trên nền mờ dễ đọc */
+.carousel-caption {
+    bottom: 30px;
+    left: 15%;
+    right: 15%;
+}
+
+.caption-box {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 8px 24px;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+/* Tab nav-pills */
+.nav-pills .nav-link {
+    color: #0d6efd;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+/* Khung nội dung tab */
+.tab-content .tab-pane {
+    border-color: #e9ecef !important;
+    min-height: 80px;
+}
