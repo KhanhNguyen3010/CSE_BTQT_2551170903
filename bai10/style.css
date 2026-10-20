@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Thẻ form: nền #FFFFFF, bóng đổ, bo góc 12px */
+.form-container {
+    background-color: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Tiêu đề form: nền #0f766e, chữ #FFFFFF, kèm mô tả nhỏ */
+.form-header {
+    background-color: #0f766e;
+    color: #ffffff;
+    padding: 24px 28px;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.form-subtitle {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+}
+
+/* Thân form */
+.form-body {
+    padding: 25px 28px 30px 28px;
+}
+
+/* Các ô ngắn xếp 2 cột */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    margin-bottom: 18px;
+}
+
+/* Nhãn ô nhập: chữ #334155, in đậm, cỡ nhỏ */
+label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Ô nhập ngắn, chọn chủ đề, nội dung dài: viền #cbd5e1 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13.5px;
+    color: #1e293b;
+    font-family: inherit;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 95px;
+    line-height: 1.5;
+}
+
+/* Checkbox đồng ý: căn phải theo mẫu */
+.checkbox-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 22px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 250px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: #0f766e;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #334155;
+    font-weight: normal;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* Nút gửi & Nhập lại */
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 9px 22px;
+    font-size: 13.5px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Nút gửi: nổi bật, nền #0f766e, chữ trắng */
+.btn-submit {
+    background-color: #0f766e;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #115e59;
+}
+
+/* Nút nhập lại: màu nhạt #e2e8f0 */
+.btn-reset {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.btn-reset:hover {
+    background-color: #cbd5e1;
+}
+
+/* =========================================
+   THIẾT KẾ RESPONSIVE
+   ========================================= */
+
+/* Tablet & Mobile (≤ 640px) */
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .form-header {
+        padding: 20px 20px;
+    }
+
+    .form-body {
+        padding: 20px 20px 25px 20px;
+    }
+
+    .checkbox-container {
+        justify-content: flex-start;
+    }
+
+    .checkbox-group {
+        max-width: 100%;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+
+    .btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+/* Mobile nhỏ (≤ 420px) */
+@media (max-width: 420px) {
+    body {
+        padding: 10px 5px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .form-subtitle {
+        font-size: 12.5px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,208 @@
+/* ========================================================
+   BÀI 18 — TRANG BÀI VIẾT KÈM DANH SÁCH
+   Chuẩn thẩm mỹ, bám sát 100% bảng mã màu & yêu cầu đề bài
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+    color: #1e293b;
+    line-height: 1.65;
+}
+
+/* Khung bao bọc bài viết: nền trắng, bóng đổ nhẹ, căn giữa */
+.article-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 720px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    padding: 36px 34px;
+}
+
+/* =========================================
+   1. TIÊU ĐỀ BÀI VIẾT: màu #E65100, cỡ lớn
+   ========================================= */
+.article-header {
+    margin-bottom: 22px;
+}
+
+.article-title {
+    color: #E65100;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.article-subtitle {
+    color: #E65100;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* =========================================
+   2. BỐ CỤC NỘI DUNG & ẢNH HOA
+   ========================================= */
+.article-body {
+    overflow: hidden; /* Clearfix cho phần tử float */
+    margin-bottom: 26px;
+}
+
+/* Ảnh hoa: nổi bên phải (float: right), bo góc */
+.image-wrapper {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    max-width: 220px;
+}
+
+.article-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Xử lý trường hợp ảnh lỗi (fallback text giống ảnh đề bài) */
+.article-img.img-fallback {
+    min-width: 160px;
+    min-height: 90px;
+    background-color: #f1f5f9;
+    border: 1px dashed #cbd5e1;
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    line-height: 90px;
+}
+
+/* =========================================
+   3. CHỮ CÁI ĐẦU ĐOẠN VĂN: DROP CAP #E65100
+   ========================================= */
+.paragraph-dropcap {
+    font-size: 15.5px;
+    color: #334155;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+.paragraph-dropcap::first-letter {
+    font-size: 54px;
+    font-weight: 700;
+    color: #E65100;
+    float: left;
+    line-height: 0.82;
+    padding-right: 8px;
+    padding-top: 4px;
+    font-family: inherit;
+}
+
+.paragraph-text {
+    font-size: 15.5px;
+    color: #334155;
+    text-align: justify;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   4. KHỐI "HƯƠNG VỊ MIỀN NAM": VIỀN XANH, NỀN NHẠT, 2 CỘT
+   ========================================= */
+.specialties-box {
+    border: 1.5px solid #2E7D32;
+    background-color: #f4fbf4;
+    border-radius: 12px;
+    padding: 22px 28px;
+}
+
+/* Tiêu đề khối: chữ #2E7D32, in nghiêng */
+.specialties-title {
+    color: #2E7D32;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* Danh sách 2 cột: áp dụng columns: 2 theo đúng gợi ý giải */
+.specialties-list {
+    columns: 2;
+    column-gap: 36px;
+    list-style-image: url('../Anh/Bai18/icon_list_c.gif');
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.specialties-list li {
+    font-size: 15px;
+    color: #1e293b;
+    font-weight: 500;
+    margin-bottom: 10px;
+    break-inside: avoid; /* Tránh ngắt dòng giữa chừng phần tử */
+}
+
+/* =========================================
+   5. THIẾT KẾ RESPONSIVE
+   ========================================= */
+@media (max-width: 640px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .article-card {
+        padding: 22px 18px;
+    }
+
+    .article-title {
+        font-size: 24px;
+    }
+
+    .article-subtitle {
+        font-size: 15px;
+    }
+
+    /* Trên màn hình hẹp, ảnh nổi được căn chỉnh hợp lý */
+    .image-wrapper {
+        float: none;
+        margin: 0 auto 16px auto;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .article-img {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .paragraph-dropcap::first-letter {
+        font-size: 46px;
+    }
+
+    .paragraph-dropcap,
+    .paragraph-text {
+        font-size: 14.5px;
+        text-align: left;
+    }
+
+    .specialties-box {
+        padding: 18px 20px;
+    }
+
+    /* Chuyển danh sách về 1 cột trên điện thoại để chữ không bị chen chúc */
+    .specialties-list {
+        columns: 1;
+        gap: 0;
+    }
+}

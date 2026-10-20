@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 15 - Máy tính đơn giản (JavaScript)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Vỏ máy tính: nền #111827, bo góc 16px, bóng đổ -->
+    <div class="calculator-container">
+        <!-- Màn hình máy tính: nền #022c22, chữ #4ade80 -->
+        <div class="calculator-screen">
+            <div class="calc-expression" id="calc-expression">12 + 8 × 3</div>
+            <div class="calc-result" id="calc-result">36</div>
+        </div>
+
+        <!-- Bàn phím máy tính dạng lưới 4x5 -->
+        <div class="calculator-keypad">
+            <!-- Hàng 1 -->
+            <button type="button" class="btn btn-clear" data-action="clear">C</button>
+            <button type="button" class="btn btn-operator" data-action="parentheses">( )</button>
+            <button type="button" class="btn btn-operator" data-char="%">%</button>
+            <button type="button" class="btn btn-operator" data-char="÷">÷</button>
+
+            <!-- Hàng 2 -->
+            <button type="button" class="btn btn-number" data-char="7">7</button>
+            <button type="button" class="btn btn-number" data-char="8">8</button>
+            <button type="button" class="btn btn-number" data-char="9">9</button>
+            <button type="button" class="btn btn-operator" data-char="×">×</button>
+
+            <!-- Hàng 3 -->
+            <button type="button" class="btn btn-number" data-char="4">4</button>
+            <button type="button" class="btn btn-number" data-char="5">5</button>
+            <button type="button" class="btn btn-number" data-char="6">6</button>
+            <button type="button" class="btn btn-operator" data-char="-">-</button>
+
+            <!-- Hàng 4 -->
+            <button type="button" class="btn btn-number" data-char="1">1</button>
+            <button type="button" class="btn btn-number" data-char="2">2</button>
+            <button type="button" class="btn btn-number" data-char="3">3</button>
+            <button type="button" class="btn btn-operator" data-char="+">+</button>
+
+            <!-- Hàng 5 -->
+            <button type="button" class="btn btn-number btn-zero" data-char="0">0</button>
+            <button type="button" class="btn btn-number" data-char=".">.</button>
+            <button type="button" class="btn btn-equal" data-action="calculate">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

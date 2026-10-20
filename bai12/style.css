@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background: url('../Anh/Bai12/Nen.gif') repeat, #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Thẻ card bao quanh toàn bộ bài tập */
+.calendar-card {
+    background-color: #ffffff;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 35px 30px 30px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Khối hiển thị ô lịch */
+.calendar-display {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 20px 25px 20px;
+    text-align: center;
+}
+
+/* Năm: chữ #C62828 (đỏ, nhỏ) */
+.cal-year {
+    color: #C62828;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/* Tháng X: chữ #1565C0 (xanh, cỡ 18-20px) */
+.cal-month {
+    color: #1565C0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Số ngày: chữ #C62828 (đỏ, rất lớn 52px+) */
+.cal-day {
+    color: #C62828;
+    font-size: 58px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 4px 0 6px 0;
+    letter-spacing: -1px;
+}
+
+/* Thứ: chữ #1565C0 (xanh, cỡ 18px) */
+.cal-weekday {
+    color: #1565C0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Lời chào theo buổi: chữ #C62828 (đỏ, in nghiêng) */
+.greeting {
+    color: #C62828;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin: 22px 0 18px 0;
+}
+
+/* Form nhập: viền #1565C0, 3 ô + 1 nút */
+.calendar-form {
+    border: 2px solid #1565C0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    max-width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #1565C0;
+    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+}
+
+/* Nút In lịch: nền xám xanh, chữ trắng, 2 dòng */
+.btn-print {
+    background-color: #486581;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 13.5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: 1.25;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-print:hover {
+    background-color: #334e68;
+}
+
+.btn-print:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   THIẾT KẾ RESPONSIVE
+   ========================================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .calendar-card {
+        padding: 25px 18px 22px 18px;
+    }
+
+    .cal-day {
+        font-size: 48px;
+    }
+
+    .greeting {
+        font-size: 18px;
+        margin: 18px 0 15px 0;
+    }
+
+    .calendar-form {
+        padding: 14px 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .input-group {
+        flex: 1 1 28%;
+    }
+
+    .input-group input {
+        max-width: 100%;
+        padding: 6px 4px;
+        font-size: 14px;
+    }
+
+    .btn-print {
+        flex: 1 1 100%;
+        height: 38px;
+        flex-direction: row;
+        gap: 4px;
+        margin-top: 4px;
+    }
+}

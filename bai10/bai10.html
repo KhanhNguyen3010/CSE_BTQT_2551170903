@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang liên hệ - Biểu mẫu HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <!-- Tiêu đề form: nền #0f766e, chữ trắng, kèm mô tả nhỏ -->
+        <header class="form-header">
+            <h1 class="form-title">Liên hệ với chúng tôi</h1>
+            <p class="form-subtitle">Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi trong 24 giờ.</p>
+        </header>
+
+        <!-- Thân form liên hệ -->
+        <form class="form-body" action="#" method="POST">
+            <!-- Lưới các ô ngắn 2 cột -->
+            <div class="form-grid">
+                <!-- Họ và tên -->
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" name="fullname" value="Nguyễn Văn An" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="an.nv@tlu.edu.vn" required>
+                </div>
+
+                <!-- Số điện thoại -->
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" value="0987 654 321">
+                </div>
+
+                <!-- Chủ đề (select) -->
+                <div class="form-group">
+                    <label for="subject">Chủ đề</label>
+                    <select id="subject" name="subject">
+                        <option value="khoa-hoc" selected>Hỏi về khoá học</option>
+                        <option value="bai-tap">Hỏi về bài tập</option>
+                        <option value="hoc-phi">Hỏi về học phí</option>
+                        <option value="khac">Khác</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Nội dung dài (textarea rows=4) -->
+            <div class="form-group full-width">
+                <label for="message">Nội dung</label>
+                <textarea id="message" name="message" rows="4">Em muốn hỏi về lịch nộp bài tập môn Lập trình Web ạ.</textarea>
+            </div>
+
+            <!-- Checkbox đồng ý -->
+            <div class="checkbox-container">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" name="agree" checked>
+                    <label for="agree">Tôi đồng ý nhận email phản hồi.</label>
+                </div>
+            </div>
+
+            <!-- Hai nút: Gửi nổi bật và Nhập lại màu nhạt -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-submit">Gửi liên hệ</button>
+                <button type="reset" class="btn btn-reset">Nhập lại</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

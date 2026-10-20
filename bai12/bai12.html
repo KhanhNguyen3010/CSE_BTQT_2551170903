@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 2 - Bài 12: In lịch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calendar-card">
+        <!-- Khối hiển thị ô lịch bloc -->
+        <div class="calendar-display">
+            <div class="cal-year" id="display-year">2026</div>
+            <div class="cal-month" id="display-month">Tháng 12</div>
+            <div class="cal-day" id="display-day">24</div>
+            <div class="cal-weekday" id="display-weekday">Thứ hai</div>
+        </div>
+
+        <!-- Lời chào theo buổi (đỏ, in nghiêng) -->
+        <div class="greeting" id="display-greeting">Chào buổi sáng!</div>
+
+        <!-- Form nhập Ngày / Tháng / Năm -->
+        <form class="calendar-form" id="calendar-form" onsubmit="return false;">
+            <div class="input-group">
+                <label for="input-day">Ngày</label>
+                <input type="number" id="input-day" min="1" max="31" value="24" required>
+            </div>
+
+            <div class="input-group">
+                <label for="input-month">Tháng</label>
+                <input type="number" id="input-month" min="1" max="12" value="12" required>
+            </div>
+
+            <div class="input-group">
+                <label for="input-year">Năm</label>
+                <input type="number" id="input-year" min="1900" max="2100" value="2026" required>
+            </div>
+
+            <button type="button" class="btn-print" id="print-btn">In<br>lịch</button>
+        </form>
+    </div>
+
+    <!-- Tệp JavaScript xử lý sự kiện và đối tượng Date -->
+    <script src="script.js"></script>
+</body>
+
+</html>

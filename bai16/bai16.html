@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 16 — Danh sách việc cần làm (JavaScript)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Thẻ ứng dụng chính: nền #FFFFFF, bóng đổ, rộng tối đa 600px -->
+    <main class="todo-app-card">
+        <!-- Phần tiêu đề: nền #6d28d9, chữ #FFFFFF kèm mô tả -->
+        <header class="todo-header">
+            <h1 class="todo-title">Danh sách việc cần làm</h1>
+            <p class="todo-subtitle">Thêm việc mới, đánh dấu hoàn thành hoặc xoá — tất cả bằng JavaScript.</p>
+        </header>
+
+        <!-- Khối nhập liệu: ô nhập + nút Thêm -->
+        <form class="todo-form" id="todo-form">
+            <input 
+                type="text" 
+                id="todo-input" 
+                class="todo-input" 
+                placeholder="Hoàn thành bài tập Lập trình Web" 
+                autocomplete="off"
+            >
+            <button type="submit" id="add-btn" class="btn-add">Thêm</button>
+        </form>
+
+        <!-- Danh sách các việc cần làm: kẻ nét đứt #ede9fe -->
+        <ul class="todo-list" id="todo-list">
+            <!-- Danh sách các việc sẽ được sinh tự động từ JavaScript -->
+        </ul>
+
+        <!-- Thống kê chân trang: số việc còn lại -->
+        <footer class="todo-footer">
+            <span id="remaining-count" class="remaining-text">Còn 2 việc chưa hoàn thành</span>
+        </footer>
+    </main>
+
+    <!-- Tích hợp logic xử lý JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

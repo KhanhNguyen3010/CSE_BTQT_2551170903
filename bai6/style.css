@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-container {
+    background-color: #FAF3E7;
+    max-width: 700px;
+    width: 100%;
+    padding: 35px 35px 45px 35px;
+    border-radius: 4px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    color: #E65100;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.col-image {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-img {
+    max-width: 100%;
+    width: 250px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.col-table {
+    flex: 0 0 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.food-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.food-table thead tr {
+    background-color: #E65100;
+    color: #ffffff;
+}
+
+.food-table th {
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.col-stt {
+    width: 65px;
+    text-align: center;
+}
+
+.col-name {
+    text-align: left;
+}
+
+.food-table td {
+    padding: 8px 14px;
+    font-size: 15px;
+    color: #000000;
+    border-bottom: 1px solid #fff;
+
+}
+
+.food-table td.cold-stt {
+    font-weight: bold;
+}
+
+.food-table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.food-table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        padding: 25px 20px 30px 20px;
+        margin: 20px auto;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 20px
+    }
+
+    .col-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .food-img {
+        width: 200px;
+    }
+
+    .col-table {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 480) {
+    body {
+        padding: 10px;
+    }
+
+    .card-container {
+        padding: 20px 12px;
+    }
+
+    .tittle {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .food-img {
+        width: 160px;
+    }
+
+    .food-table th,
+    .food-table td {
+        padding: 7px 10px;
+        font-size: 14px;
+    }
+
+    .col-stt {
+        width: 50px;
+    }
+}

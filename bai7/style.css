@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Khung card bao quanh */
+.card-container {
+    background-color: #ffffff;
+    max-width: 760px;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Dải tiêu đề: nền đỏ #C8102E, chữ trắng #FFFFFF, căn giữa */
+.main-header {
+    background-color: #C8102E;
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.main-header h1 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Dải phụ: nền hồng nhạt #FBE3E8, chữ đỏ #C8102E, in đậm, căn giữa */
+.sub-header {
+    background-color: #FBE3E8;
+    text-align: center;
+    padding: 8px 15px;
+}
+
+.sub-header h2 {
+    color: #C8102E;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Thân bài 2 cột có vạch phân cách dọc */
+.content {
+    display: flex;
+    flex-direction: row;
+    min-height: 280px;
+}
+
+/* Cột trái: có vạch chia dọc bên phải */
+.col-left {
+    flex: 1;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px 20px 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Cột phải: chứa ảnh góc trên và 2 mục đầu */
+.col-right {
+    flex: 1;
+    padding: 20px 20px 25px 20px;
+}
+
+/* Ảnh sản phẩm: góc phải trên (float) */
+.product-img {
+    float: right;
+    width: 140px;
+    height: auto;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+/* Tiêu đề mục: chữ đỏ #C8102E, có ký hiệu □ */
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    color: #C8102E;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Danh sách nội dung: chữ #333333 */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+li b {
+    color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-container {
+        margin: 10px auto;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .col-right {
+        order: 1;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 15px;
+    }
+
+    .col-left {
+        order: 2;
+        border-right: none;
+        padding: 15px;
+        justify-content: flex-start;
+    }
+
+    .product-img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .main-header h1 {
+        font-size: 17px;
+    }
+
+    .sub-header h2 {
+        font-size: 13px;
+    }
+
+    .product-img {
+        width: 105px;
+        margin-left: 10px;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+
+    li {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 17 — Kiểm tra biểu mẫu bằng JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Khung bao bọc form: nền #FFFFFF, viền #fed7aa, bo góc 12px -->
+    <div class="form-wrapper">
+        <form id="register-form" class="register-form" novalidate>
+            <!-- Phần tiêu đề: chữ #c2410c kèm mô tả -->
+            <header class="form-header">
+                <h1 class="form-title">Đăng ký tài khoản</h1>
+                <p class="form-subtitle">Dữ liệu được kiểm tra bằng JavaScript trước khi gửi.</p>
+            </header>
+
+            <!-- Trường 1: Họ và tên -->
+            <div class="form-group" id="group-fullname">
+                <label for="fullname" class="form-label">Họ và tên</label>
+                <input 
+                    type="text" 
+                    id="fullname" 
+                    name="fullname" 
+                    class="form-input" 
+                    placeholder="Nhập họ và tên"
+                    autocomplete="name"
+                >
+                <div class="feedback-msg" id="msg-fullname"></div>
+            </div>
+
+            <!-- Trường 2: Email -->
+            <div class="form-group" id="group-email">
+                <label for="email" class="form-label">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="Nhập địa chỉ email"
+                    autocomplete="email"
+                >
+                <div class="feedback-msg" id="msg-email"></div>
+            </div>
+
+            <!-- Trường 3: Mật khẩu -->
+            <div class="form-group" id="group-password">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    placeholder="Nhập mật khẩu"
+                    autocomplete="new-password"
+                >
+                <div class="feedback-msg" id="msg-password"></div>
+            </div>
+
+            <!-- Trường 4: Xác nhận mật khẩu -->
+            <div class="form-group" id="group-confirm-password">
+                <label for="confirm-password" class="form-label">Xác nhận mật khẩu</label>
+                <input 
+                    type="password" 
+                    id="confirm-password" 
+                    name="confirm-password" 
+                    class="form-input" 
+                    placeholder="Nhập lại mật khẩu"
+                    autocomplete="new-password"
+                >
+                <div class="feedback-msg" id="msg-confirm-password"></div>
+            </div>
+
+            <!-- Nút gửi: nền #c2410c, chữ #FFFFFF -->
+            <button type="submit" id="btn-submit" class="btn-submit">Đăng ký</button>
+        </form>
+    </div>
+
+    <!-- Tích hợp logic kiểm tra biểu mẫu bằng JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 18 — Trang bài viết kèm danh sách</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Khung bao bọc bài viết -->
+    <article class="article-card">
+        <!-- Tiêu đề bài viết: màu #E65100, cỡ lớn -->
+        <header class="article-header">
+            <h1 class="article-title">Bông điên điển</h1>
+            <h2 class="article-subtitle">Món ngon mùa nước nổi</h2>
+        </header>
+
+        <!-- Phần nội dung văn bản kèm ảnh hoa nổi bên phải -->
+        <section class="article-body">
+            <!-- Ảnh hoa nổi bên phải (float: right), bo góc -->
+            <div class="image-wrapper">
+                <img 
+                    src="../Anh/Bai18/Diendien.jpg" 
+                    alt="Bông điên điển" 
+                    class="article-img"
+                >
+            </div>
+
+            <!-- Đoạn 1: Chữ cái đầu là drop cap màu cam #E65100 -->
+            <p class="paragraph-dropcap">
+                Mỗi năm, vào đầu mùa nước nổi, những cây điên điển bên bờ sông, bờ rạch lại xanh tươi trở lại, trổ đầy hoa vàng rực giữa vùng lũ Đồng bằng sông Cửu Long.
+            </p>
+
+            <!-- Đoạn 2: Nội dung tiếp nối -->
+            <p class="paragraph-text">
+                Trước đây, người dân nghèo dùng bông điên điển nấu cháo cầm cự qua tháng ngày khó khăn. Ngày nay, bông điên điển trở thành món ngon: làm dưa chỉ cần ngâm với giá sống trong nước muối vừa mặn, ba ngày sau là có dĩa dưa chua giòn chấm nước tương ớt.
+            </p>
+        </section>
+
+        <!-- Khối phụ "Hương vị miền Nam": viền #2E7D32, nền #f4fbf4, danh sách 2 cột -->
+        <aside class="specialties-box">
+            <h3 class="specialties-title">Hương vị miền Nam</h3>
+            <ul class="specialties-list">
+                <li>Bánh tráng Mỹ Lồng, bánh phồng Sơn Đốc</li>
+                <li>Dồi lươn rim nước cốt dừa</li>
+                <li>Bún mắm</li>
+                <li>Bún nước lèo Sóc Trăng</li>
+                <li>Nem lai Vung</li>
+                <li>Cốm dẹp</li>
+                <li>Bưởi Tân Triều</li>
+            </ul>
+        </aside>
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+/* ========================================================
+   BÀI 20 — HIỆU ỨNG ẢNH VỚI CSS FILTER
+   Chuẩn thẩm mỹ, bám sát 100% bảng mã màu & yêu cầu đề bài
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0d1117;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    color: #e2e8f0;
+}
+
+/* Khung ứng dụng chính căn giữa trang */
+.filter-app {
+    width: 100%;
+    max-width: 660px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+/* =========================================
+   1. KHUNG ẢNH: nền #1c2226, bo góc 12px
+   ========================================= */
+.display-card {
+    background-color: #1c2226;
+    width: 100%;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.image-box {
+    min-height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ảnh hoa hồng: mặc định grayscale(1) */
+.rose-img {
+    max-height: 165px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: filter 0.35s ease, transform 0.35s ease;
+    user-select: none;
+}
+
+/* Fallback khi đường dẫn ảnh chưa tải được */
+.rose-img:not(.loaded) {
+    min-width: 120px;
+    min-height: 120px;
+}
+
+/* Dòng chữ: gradient vàng gold, in nghiêng */
+.special-text {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.8px;
+    margin-top: 14px;
+    /* Gradient vàng kim rực rỡ */
+    background: linear-gradient(135deg, #FFF176 0%, #FFD54F 40%, #FFA000 80%, #FF8F00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(255, 179, 0, 0.35));
+}
+
+/* =========================================
+   2. THANH 13 NÚT BẤM HIỆU ỨNG
+   Nền #232b30, nút được chọn #0d6efd
+   ========================================= */
+.button-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-filter {
+    background-color: #232b30;
+    color: #cbd5e1;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.btn-filter:hover {
+    background-color: #333e46;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-filter:active {
+    transform: scale(0.97);
+}
+
+/* Nút đang chọn: nền #0d6efd, chữ #FFFFFF */
+.btn-filter.active {
+    background-color: #0d6efd;
+    color: #FFFFFF;
+    box-shadow: 0 0 12px rgba(13, 110, 253, 0.5);
+}
+
+/* =========================================
+   3. ĐỊNH NGHĨA 13 HIỆU ỨNG CSS FILTER / TRANSFORM
+   Khớp 100% gợi ý giải trong đề bài
+   ========================================= */
+
+/* 1. Gray: grayscale(1) */
+.rose-img.filter-gray {
+    filter: grayscale(1);
+    transform: none;
+}
+
+/* 2. Xray: grayscale(1) invert(1) */
+.rose-img.filter-xray {
+    filter: grayscale(1) invert(1);
+    transform: none;
+}
+
+/* 3. Invert: invert(1) */
+.rose-img.filter-invert {
+    filter: invert(1);
+    transform: none;
+}
+
+/* 4. FlipH: scaleX(-1) */
+.rose-img.filter-fliph {
+    filter: none;
+    transform: scaleX(-1);
+}
+
+/* 5. FlipV: scaleY(-1) */
+.rose-img.filter-flipv {
+    filter: none;
+    transform: scaleY(-1);
+}
+
+/* 6. Glow: drop-shadow vàng gold rực rỡ */
+.rose-img.filter-glow {
+    filter: drop-shadow(0 0 15px #f59e0b) drop-shadow(0 0 6px #ffd54f);
+    transform: none;
+}
+
+/* 7. Shadow: drop-shadow(8px 8px 10px rgba(0,0,0,0.8)) */
+.rose-img.filter-shadow {
+    filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.85));
+    transform: none;
+}
+
+/* 8. Bold Shadow: bóng đen đậm nét nổi */
+.rose-img.filter-boldshadow {
+    filter: drop-shadow(10px 10px 0px rgba(0, 0, 0, 0.95));
+    transform: none;
+}
+
+/* 9. DropShadow: bóng sáng trắng phản quang */
+.rose-img.filter-dropshadow {
+    filter: drop-shadow(6px 6px 8px rgba(255, 255, 255, 0.45));
+    transform: none;
+}
+
+/* 10. Blur: blur(3px) */
+.rose-img.filter-blur {
+    filter: blur(3px);
+    transform: none;
+}
+
+/* 11. Wave: SVG filter feTurbulence + feDisplacementMap */
+.rose-img.filter-wave {
+    filter: url(#wave-filter);
+    transform: none;
+}
+
+/* 12. Mask: hiệu ứng mặt nạ mờ tương phản cao */
+.rose-img.filter-mask {
+    filter: contrast(180%) brightness(85%) opacity(0.7);
+    transform: none;
+}
+
+/* 13. Alpha: opacity(0.4) */
+.rose-img.filter-alpha {
+    filter: opacity(0.4);
+    transform: none;
+}
+
+/* =========================================
+   4. THIẾT KẾ RESPONSIVE
+   ========================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .display-card {
+        padding: 24px 16px;
+    }
+
+    .rose-img {
+        max-height: 140px;
+    }
+
+    .special-text {
+        font-size: 22px;
+    }
+
+    .btn-filter {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .button-row {
+        gap: 6px;
+    }
+}

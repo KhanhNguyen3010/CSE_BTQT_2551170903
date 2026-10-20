@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.container {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.col-left {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-left img,
+.rose.img {
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.col-right {
+    flex: 1;
+}
+
+.title {
+    color: #C2185B;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+}
+
+.list-square {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.list-circle {
+    list-style: circle;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.copyright-wrap {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.copyright {
+    font-size: 15px;
+    color: #0000EE;
+    text-decoration: underline;
+    font-weight: normal;
+}

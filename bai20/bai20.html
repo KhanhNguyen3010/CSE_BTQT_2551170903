@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 20 — Hiệu ứng ảnh với CSS Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Khung ứng dụng chính trên nền tối -->
+    <main class="filter-app">
+        <!-- Khung hiển thị ảnh và dòng chữ: nền #1c2226, bo góc 12px -->
+        <div class="display-card">
+            <div class="image-box">
+                <img 
+                    id="target-image"
+                    src="../Anh/Bai20/hoahong.gif" 
+                    alt="Hoa hồng" 
+                    class="rose-img filter-gray"
+                >
+            </div>
+            <!-- Dòng chữ: gradient vàng gold, in nghiêng -->
+            <div class="special-text">Special For You</div>
+        </div>
+
+        <!-- Thanh nút bấm 13 hiệu ứng: nền #232b30, nút chọn #0d6efd -->
+        <nav class="button-controls" id="filter-controls">
+            <!-- Hàng 1: 8 nút -->
+            <div class="button-row">
+                <button type="button" class="btn-filter active" data-effect="gray">Gray</button>
+                <button type="button" class="btn-filter" data-effect="xray">Xray</button>
+                <button type="button" class="btn-filter" data-effect="invert">Invert</button>
+                <button type="button" class="btn-filter" data-effect="fliph">FlipH</button>
+                <button type="button" class="btn-filter" data-effect="flipv">FlipV</button>
+                <button type="button" class="btn-filter" data-effect="glow">Glow</button>
+                <button type="button" class="btn-filter" data-effect="shadow">Shadow</button>
+                <button type="button" class="btn-filter" data-effect="boldshadow">Bold Shadow</button>
+            </div>
+            <!-- Hàng 2: 5 nút -->
+            <div class="button-row">
+                <button type="button" class="btn-filter" data-effect="dropshadow">DropShadow</button>
+                <button type="button" class="btn-filter" data-effect="blur">Blur</button>
+                <button type="button" class="btn-filter" data-effect="wave">Wave</button>
+                <button type="button" class="btn-filter" data-effect="mask">Mask</button>
+                <button type="button" class="btn-filter" data-effect="alpha">Alpha</button>
+            </div>
+        </nav>
+    </main>
+
+    <!-- Bộ lọc SVG cho hiệu ứng sóng nước (Wave) theo đúng gợi ý giải -->
+    <svg width="0" height="0" style="position: absolute; pointer-events: none;">
+        <defs>
+            <filter id="wave-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04 0.08" numOctaves="2" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Tích hợp JavaScript xử lý sự kiện bấm nút chuyển hiệu ứng -->
+    <script src="script.js"></script>
+</body>
+
+</html>

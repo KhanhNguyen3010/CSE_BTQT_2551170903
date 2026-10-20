@@ -1,0 +1,189 @@
+/* ========================================================
+   BÀI 17 — KIỂM TRA BIỂU MẪU BẰNG JAVASCRIPT
+   Chuẩn thẩm mỹ, bám sát 100% bảng mã màu & yêu cầu đề bài
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fffaf5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    color: #1e293b;
+}
+
+/* Khung form: nền #FFFFFF, viền #fed7aa, bo góc 12px, bóng đổ */
+.form-wrapper {
+    background-color: #FFFFFF;
+    border: 1.5px solid #fed7aa;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    max-width: 480px;
+    padding: 32px 30px;
+}
+
+/* Phần tiêu đề: chữ #c2410c */
+.form-header {
+    margin-bottom: 24px;
+}
+
+.form-title {
+    color: #c2410c;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+
+.form-subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Nhóm nhập liệu */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+/* Ô nhập: viền cơ bản, chuyển đổi viền theo kết quả */
+.form-input {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 15px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+.form-input:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Trạng thái lỗi: viền #dc2626, nền phớt hồng */
+.form-group.has-error .form-input {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.form-group.has-error .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* Trạng thái hợp lệ: viền #16a34a */
+.form-group.has-success .form-input {
+    border-color: #16a34a;
+    background-color: #ffffff;
+}
+
+.form-group.has-success .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Thông báo phản hồi dưới ô nhập */
+.feedback-msg {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+    min-height: 18px;
+    line-height: 1.4;
+    display: none;
+}
+
+/* Thông báo lỗi: chữ #dc2626 */
+.form-group.has-error .feedback-msg {
+    display: block;
+    color: #dc2626;
+}
+
+/* Thông báo hợp lệ: chữ #16a34a, dấu ✓ */
+.form-group.has-success .feedback-msg {
+    display: block;
+    color: #16a34a;
+}
+
+/* Nút đăng ký: nền #c2410c, chữ #FFFFFF */
+.btn-submit {
+    width: 100%;
+    background-color: #c2410c;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    user-select: none;
+    font-family: inherit;
+}
+
+.btn-submit:hover {
+    background-color: #9a3412;
+    box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   THIẾT KẾ RESPONSIVE
+   ========================================= */
+
+@media (max-width: 520px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .form-wrapper {
+        padding: 24px 20px;
+        border-radius: 10px;
+    }
+
+    .form-title {
+        font-size: 21px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+    }
+
+    .form-input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

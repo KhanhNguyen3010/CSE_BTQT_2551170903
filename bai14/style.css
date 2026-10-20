@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 35px 15px;
+}
+
+/* Khung trang chính */
+.page-container {
+    background-color: #ffffff;
+    max-width: 920px;
+    width: 100%;
+    padding: 25px 25px 35px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Dải tiêu đề: nền xanh lá #2E7D32, chữ vàng #FFEB3B, căn giữa */
+.main-header {
+    background-color: #2E7D32;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.main-title {
+    color: #FFEB3B;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Đoạn dẫn nhập: chữ #1b5e20, in nghiêng */
+.intro-text {
+    color: #1b5e20;
+    font-size: 13.5px;
+    font-style: italic;
+    text-align: center;
+    margin: 16px 0 20px 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    line-height: 1.5;
+}
+
+/* Lưới kỳ quan: grid nhiều cột (3 cột) */
+.wonders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Mỗi kỳ quan là một khối */
+.wonder-card {
+    background-color: #ffffff;
+    border: 1px solid #dce4ec;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wonder-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Bố cục so le theo yêu cầu đề bài: dùng :nth-child(even) để đảo vị trí ảnh và chữ */
+.wonder-card:nth-child(even) {
+    flex-direction: column-reverse;
+}
+
+/* Ảnh minh họa: viền #2E7D32, bo góc 6px, chiều cao đồng đều */
+.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid #2E7D32;
+}
+
+/* Điều chỉnh viền ảnh khi khối chẵn bị đảo ngược lên trên chữ */
+.wonder-card:nth-child(even) .card-img {
+    border-bottom: none;
+    border-top: 3px solid #2E7D32;
+}
+
+/* Nội dung văn bản trong thẻ */
+.card-content {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+/* Tiêu đề mục: chữ #1b5e20, đánh số 1-6 */
+.card-title {
+    color: #1b5e20;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Đoạn mô tả */
+.card-desc {
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: justify;
+}
+
+/* =========================================
+   THIẾT KẾ RESPONSIVE
+   ========================================= */
+
+/* Tablet (≤ 860px): Chuyển thành lưới 2 cột */
+@media (max-width: 860px) {
+    .wonders-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .card-img {
+        height: 160px;
+    }
+}
+
+/* Mobile (≤ 560px): Chuyển thành lưới 1 cột dọc */
+@media (max-width: 560px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .page-container {
+        padding: 16px 14px 25px 14px;
+    }
+
+    .main-title {
+        font-size: 18px;
+    }
+
+    .intro-text {
+        font-size: 12.5px;
+        margin: 12px 0 16px 0;
+        padding-bottom: 12px;
+    }
+
+    .wonders-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-img {
+        height: 180px;
+    }
+}
